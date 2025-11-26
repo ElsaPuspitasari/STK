@@ -596,15 +596,23 @@ if submit_button:
                             cutoff = 100
                         preview_text = preview_text[:cutoff].strip() + "..."
 
-                    st.markdown(f"""
-                    <div class="related-answer-item">
-                        <div class="answer-number">{idx}</div>
-                        <div class="answer-content">
-                            <div class="answer-preview">{preview_text}</div>
-                            <div class="answer-score">Skor {candidate['score']:.4f}</div>
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
+                        st.markdown(f"""
+                          <div class="related-answer-item">
+                              <div class="answer-number">{idx}</div>
+                              <div class="answer-content">
+                                  <details>
+                                      <summary class="answer-preview" style="cursor:pointer;">
+                                          {preview_text}
+                                      </summary>
+                                      <div style="margin-top: 10px; color:#374151; line-height:1.6;">
+                                          {candidate["answer"]}
+                                      </div>
+                                  </details>
+                                  <div class="answer-score">Skor {candidate['score']:.4f}</div>
+                              </div>
+                          </div>
+                      """, unsafe_allow_html=True)
+
 
 
 # Close content container
