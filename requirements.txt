@@ -2,4 +2,6 @@ streamlit
 numpy
 sentence-transformers
 torch
-tensorflow
+transformers
+scikit-learn
+tf-keras
